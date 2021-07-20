@@ -22,7 +22,7 @@ print(math.isclose(num1, num2))
 ```
 (1) 줄 바꿈 : \n
 (2) 탭 : \t
-(3) 백슬래시 : \b
+(3) 백슬래시 : \\
 ```
 
 # 4. String Interpolation
