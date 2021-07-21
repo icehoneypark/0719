@@ -8,7 +8,7 @@ Immutable : String, Tuple, Range
 # 2. 홀수만 담기
 
 ```
-a = list(range(51))
+a = list(range(1, 51))
 a = a[1::2]
 print(a)
 ```
