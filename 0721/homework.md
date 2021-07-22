@@ -14,14 +14,15 @@ def get_middle_char(words) :
     if length % 2 :
         length //= 2
         words = list(words)
-        word = words[length]
         print(words[length])
+        return words[length]
     else :
         length1 = (length // 2) - 1
         length2 = length // 2
         print(f'{words[length1]}{words[length2]}')
+        return words[length1], words[length2]
 
-get_middle_char('nnafy')
+get_middle_char('ssafy')
 get_middle_char('coding')
 ```
 
@@ -30,7 +31,7 @@ get_middle_char('coding')
 # 3. 위치 인자와 키워드 인자
 
 ```
-# 4 nnafy(name='길동', '구미') <- 2개의 argument가 들어가서 오류발생
+# 4 ssafy(name='길동', '구미')
 ```
 
 
@@ -38,7 +39,7 @@ get_middle_char('coding')
 # 4. 나의 반환값은
 
 ```
-None <- print의 반환값은 None이다.
+None
 ```
 
 
@@ -51,8 +52,10 @@ def my_avg(*numbers) :
     count = len(numbers)
     avg = numbers_sum/count
     print(avg)
+    return avg
 
 my_avg(77, 83, 95, 80, 70)
 ```
 
 ![homework 5](homework.assets/homework 5.png)
+
