@@ -166,5 +166,48 @@ A상자의 낙차가 7로 가장 크므로 7을 출력하면 된다.
 ```
 
 ```
+# t입력
+t = int(input())
+# n 입력
+
+for i in range(t):
+
+    n = int(input())
+    # h 입력
+
+    h = list(map(int, input().split()))
+    # t 횟수만큼 동작
+
+    # 1부터 시작하고 계속 1씩 더함
+    i += 1
+    # 각 블록의 낙차를 다 구해서 리스트로 정리
+    fall_length_list = []
+    # 첫 번째 칸 부터 마지막 칸 까지 (x축 값)
+    for tmp1 in range(n):
+
+        if h[tmp1] == 0:
+            pass
+        else:
+            # 해당 x축 값의 각 상자의 낙차를 구함(높이가 1에서 최대 높이까지)
+            for tmp2 in range(1, h[tmp1] + 1):
+                # 낙차 저장 변수
+                higher_cnt = 0
+                # 비교하려는 상자 이후의 x축의 상자들의 높이와 비교해서 낙차 카운트
+                for tmp3 in range(tmp1 + 1, n):
+                    # 해당 x축의 상자가 이후의 상자의 높이가 같거나 높을 때 1씩 더하기
+                    if tmp2 <= h[tmp3]:
+                        higher_cnt += 1
+                # 같거나 높은 상자, index값을 너비에서 뺌 (-1은 index가 칸보다 1이 적어서)
+                fall_length_list.append(n - 1 - tmp1 - higher_cnt)
+
+    # 낙차 중 가장 큰 값 변수 지정
+    find_max = 0
+
+    # 낙차가 가장 큰 값을 저장
+    for minus in fall_length_list:
+        if find_max <= minus:
+            find_max = minus
+
+    print('#{} {}'.format(i, find_max))
 ```
 
