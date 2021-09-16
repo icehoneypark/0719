@@ -35,6 +35,16 @@ VALUES ('303', '2020-01-01', '2020-01-03', 'deluxe', 500);
 INSERT INTO countries
 VALUES ('807', '2020-01-04', '2020-01-07', 'superior', 300);
 
+/*
+밑에와 같이 붙여써도 동작
+INSERT INTO countries
+VALUES ('B203', '2019-12-31', '2020-01-03', 'suite', 900),
+VALUES ('1102', '2020-01-04', '2020-01-08', 'suite', 850),
+VALUES ('303', '2020-01-01', '2020-01-03', 'deluxe', 500),
+VALUES ('807', '2020-01-04', '2020-01-07', 'superior', 300);
+*/
+
+
 3)
 ALTER TABLE countries
 RENAME TO hotels;
@@ -68,14 +78,15 @@ ORDER BY price;
 
 ![image-20210914175613909](workshop.assets/image-20210914175613909.png)
 
-```
+```sql
 1) User.objects.all()
 2) User.objects.filter(id=19).values('age')
 3) User.objects.values('age')
 4) User.objects.filter(age__lte=40).values('id', 'balance')
 5) User.objects.filter(last_name='김', balance__gte=500).values('first_name')
 6) User.objects.filter(first_name__endswith='수', country='경기도').values('balance')
-7) User.objects.filter(Q(balance__gte=2000) | Q(age__lte=40)).count()
+   User.objects.values('balance').filter(first_name__endswith='수', country='경기도')
+7) User.objects.filter(Q(balance__gte=2000)|Q(age__lte=40)).count()
 8) User.objects.filter(phone__startswith='010').count()
 ```
 
@@ -83,13 +94,17 @@ ORDER BY price;
 
 ![image-20210914175633086](workshop.assets/image-20210914175633086.png)
 
-```
+```sql
 9) User.objects.filter(first_name='옥자', last_name='김').update(country='경기도')
+	/*user = User.objects.filter(first_name='옥자', last_name='김')
+	uwser.country = '경기도'
+	user.save()*/
 10) User.objects.filter(first_name='진호', last_name='백').delete()
 11) User.objects.order_by('-balance').values('first_name', 'last_name', 'balance')[:5]
 12) User.objects.filter(age__lt=30, phone__contains='123')
 13) User.objects.filter(phone__startswith='010').values('country').distinct()
 14) User.objects.aggregate(Avg('age'))
+	User.objects.aggregate(age_avg=Avg('age'))
 ```
 
 
@@ -98,8 +113,10 @@ ORDER BY price;
 
 ```
 15) User.objects.filter(last_name='박').aggregate(Avg('balance'))
-16) User.objects.order_by('-balance')[0]
+16) User.objects.filter(country='경상북도').order_by('-balance')[0]
+	User.objects.filter(country='경상북도').aggregate(Max('balance'))
 17) User.objects.filter(country='제주특별자치도').values('first_name').order_by('-balance')[0]
+	User.objects.filter(country='제주특별자치도').order_by('-balance').values('first_name').[:1]
 ```
 
 

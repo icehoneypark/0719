@@ -35,7 +35,8 @@
 (4) SELECT
 
 ```
-(1) CREATE
+(1) CREATE - DDL
+INSERT - 데이터 삽입
 ```
 
 
@@ -45,7 +46,7 @@
 RDBMS의 개념적 정의와 이를 기반으로 한 DB-Engine의 종류 세가지 이상 작성하시오.
 
 ```
-Relational Database Management System의 약자로, 관계형 모델을 기반으로 하는 데이터베이스 관시시스템을 의미한다. 예시 종류로는 MySQL, SQLite, ORACLE 등이 있습니다.
+Relational Database Management System의 약자로, 관계형 모델을 기반으로 하는 데이터베이스 관리시스템을 의미한다. 예시 종류로는 MySQL, SQLite, ORACLE 등이 있습니다.
 ```
 
 
