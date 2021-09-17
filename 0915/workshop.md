@@ -17,7 +17,9 @@
 ```python
 # views.py
 
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+# from django.contrib.auth.models import User
+# 위의 함수도 가능하지만, Custom을 하게될 쯤 이 함수는 사용할 수 없다.
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 
@@ -25,6 +27,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 def index(request):
     # 계정 db의 데이터를 가져옴
+    User = get_user_model()
     accounts = User.objects.all()
     context = {
         'accounts': accounts    

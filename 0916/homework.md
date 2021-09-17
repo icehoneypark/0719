@@ -64,6 +64,7 @@ def is_authenticated(self):
 ```
 (a)	AuthenticationForm
 (b) login
+(c) form.get_user()
 ```
 
 
@@ -80,15 +81,8 @@ AnonymousUser
 
 Django에서 기본적으로 User 객체의 password 저장에 사용하는 알고리즘, 그리고 함께 사용된 해시 함수를 작성하시오.
 
-```python
-<algorithm>$<iterations>$<salt>$<hash>
-
-PASSWORD_HASHERS = [
-    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-    'django.contrib.auth.hashers.Argon2PasswordHasher',
-    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
-]
+```
+Pbkdf2, Sha256
 ```
 
 
