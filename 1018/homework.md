@@ -11,7 +11,7 @@
 1. T
 2. F (직접 참조할 수 없고 장고에서 제공하는 함수로 참조할 수 있다.(ex: commend_set.all()))
 3. T
-4. T
+4. F (다른 요소도 가능하다)
 ```
 
 
@@ -23,7 +23,8 @@
 ![image-20211018174216685](homework.assets/image-20211018174216685.png)
 
 ```
-answer, Comment
+answer_id
+articles_comment (앱이름_테이블이름)
 ```
 
 
@@ -35,7 +36,7 @@ answer, Comment
 ![image-20211018174550636](homework.assets/image-20211018174550636.png)
 
 ```
-title
+question.comment_set.all
 ```
 
 
@@ -61,5 +62,16 @@ title
 1. HTTP ERROR 405, 로그인 후 next에 따른 값에 이동하는데 GET으로 가져와서 POST방식을 요구하는 delete가 동작하지 않았다.
 
 2. delete함수에서 @login_required 데코를 사용하지 않고 if request.user.is_authenticated:를 사용한다.
+```
+
+```python
+@require_POST
+def delete(request, article_pk):
+    if request.user.is_authenticated:
+        article = get_object_or_404(Article, pk=article_pk)
+        article.delete()
+        return redirect('articles:index')
+    else:
+        return redirect('articles:detail', pk=article_pk)
 ```
 
