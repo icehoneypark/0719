@@ -18,11 +18,22 @@
 
  • API : https://dog.ceo/
 
-```js
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog API</title>
+  <style>
+    img {
+      height: 500px;
+    }
+  </style>
+</head>
 <body>
   <h1>Dog API</h1>
-  <!-- <img src="" alt="dog"> -->
-  <div class="dog-img"></div>
+  <img src="" alt="dog">
   <br>
   <button>Get dog</button>
   
@@ -41,21 +52,17 @@
       // 응답객체의 데이터에서 이미지에 대한 리소스를 img 요소의 src 속성으로 할당한다.
         .then(response => {
             const imgUrl = response.message
-            const newImgTag = document.createElement('img')
+            const newImgTag = document.querySelector('img')
             newImgTag.src = imgUrl
-            const dogBox = document.querySelector('.dog-img')
-            console.log(dogBox)
-            dogBox.appendChild(newImgTag)
           })
-        .catch(error => {
-          console.log(error)
-        })
     }
+
 
     const button = document.querySelector('button')
     button.addEventListener('click', getDog)
   </script>
 </body>
+</html>
 ```
 
 ### Picture
