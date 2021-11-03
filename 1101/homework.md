@@ -28,6 +28,6 @@
 ```
 (a) : get
 (b) : then
-(c) : response
+(c) : response.data
 ```
 
