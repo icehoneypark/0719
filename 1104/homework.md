@@ -9,9 +9,9 @@
 ​	• v-model 디렉티브는 input, textarea, select 같은 HTML 요소와 단방향 데이터 바인딩을 이루기 때문에 v-model 속성값의 제어를 통해 값을 바꿀 수 있다.
 
 ```
-(1) F
+(1) T
 (2) F
-(3) T
+(3) F
 ```
 
 
@@ -20,7 +20,7 @@
 
 ```
 computed와 watch는 둘 다 특정 데이터가 변했을 때 동작한다.
-다만 computed는 특정 데이터의 값을 바꾸고, watch는 다른 data 등을 바꾸거나 함수를 실행한다.
+다만 computed는 특정 데이터의 값을 바꾸고(선언형 프로그래밍 - return이 필수), watch는 감시하고 할 일을 명령한다(명령형 프로그래밍).
 ```
 
 
@@ -31,7 +31,7 @@ computed와 watch는 둘 다 특정 데이터가 변했을 때 동작한다.
 
 ```
 (a) : v-for
-(b) : oddNumber
+(b) : index
 (c) : oddNumbers
 ```
 
