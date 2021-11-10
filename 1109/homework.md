@@ -49,7 +49,7 @@
 (a) : this.$emit
 (b) : @add-todo="onAddTodo"
 (c) : 
-    odAddTodo: function(data) {
+    onAddTodo: function(data) {
     console.log(data)
     }
 ```
