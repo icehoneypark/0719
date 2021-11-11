@@ -9,7 +9,7 @@
 
 ```
 (1) : F
-(2) : F
+(2) : T
 (3) : F
 (4) : T
 ```
@@ -17,8 +17,8 @@
 ### 2. Vuex에서 Actions과Mutations의 역할과, 각각에 작성되는 핸들러의 특징을 서술하시오. 
 
 ```
-Actions : stat를 변경하는 대신 mutations를 commit() 메서드로 호출해서 실행, 핸들러 함수는 비동기 작업이 포함될 수 있음
-Mutations: state를 변경하는 유일한 방법, 핸들러 함수는 반드시 동기적이어야 함, 
+Actions : state를 변경하는 대신 mutations를 commit() 메서드로 호출해서 실행, 핸들러 함수는 비동기 작업이 포함될 수 있고 state를 다루지 않음.
+Mutations: state를 변경하는 유일한 방법, 핸들러 함수는 반드시 동기적이어야 함
 ```
 
 
@@ -30,7 +30,7 @@ Mutations: state를 변경하는 유일한 방법, 핸들러 함수는 반드시
 ```
 (a) : state
 (b) : getters
-(c) : actions
-(d) : todo
+(c) : mutations
+(d) : states
 ```
 
