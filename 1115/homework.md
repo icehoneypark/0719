@@ -17,8 +17,8 @@
 ![image-20211115182630730](homework.assets/image-20211115182630730.png)
 
 ```
-원인 : 요청한 리소스에 Access-Control_allow-Origin 헤더가 없기 때문에 CORS 정책에 의해 차단됨
-해결 방법 : Access-Control_allow-Origin 헤더를 추가해준다.
+원인 : 요청한 리소스에 Access-Control_allow-Origin 헤더가 없기 때문에(port 번호가 달라서) CORS 정책에 의해 차단됨
+해결 방법 : Access-Control_allow-Origin 헤더를 추가해준다(서버에 허용되는 출처 등록, header 출처 전달).
 ```
 
 ### 3. 아래 예시는 Vue에서 Django 서버로 Todo 생성 요청을 보내는 코드다. Axios 공식 문서를 참고하여 빈 칸 (a), (b), (c)에 들어갈 코드를 작성하시오.
